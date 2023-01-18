@@ -3,7 +3,18 @@
     <div v-for="(item, index) in numberList" :key="index" style="display: flex;">
       <span v-if="isNaN(item)">{{ item }}</span>
       <div class="number" v-else>
-        <span class="number-item" ref="numberItem" :data-number="item" :data-index="index">0123456789</span>
+        <div class="number-item" ref="numberItem" :data-number="item" :data-index="index">
+          <p>0</p>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+          <p>5</p>
+          <p>6</p>
+          <p>7</p>
+          <p>8</p>
+          <p>9</p>
+        </div>
       </div>
     </div>
   </div>
@@ -52,15 +63,16 @@ export default {
   
 <style scoped lang="scss">
 .number {
+  line-height: 1.35rem;
   height: 1.35rem;
   overflow: hidden;
 
-  >span {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+  .number-item{
+    display: flex;
+    font-size: 1.41rem;
+    color: #D4343B;
+    flex-direction: column;
     transform: translateY(0%);
-    margin-right: -0.48rem;
-    width: 1.28rem;
     transition: transform 1s;
   }
 }
